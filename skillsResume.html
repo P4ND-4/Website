@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Skills and Resume</title>
+    <link rel="stylesheet" href="peepee.css">
+</head>
+<header>
+    <div class="container">
+        <div class="menu">
+            <ul>
+                <li class="logo"> <img src="berserkslavebrand.jpeg" alt="Logo" /> </li>
+                <li><a href="home.html">Home</a></li>
+                <li><a href="bio.html">Bio</a></li>
+                <li class="active"><a href="skillsResume.html">Skills/Resume</a></li>
+                <li><a href="sources.html">Sources</a></li>
+                <li><a href="Rick Astley - Never Gonna Give You Up (Official Music Video) 720.mp4" class="signup">Sign Up</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<body>
+    <div class="Blog">
+        <div class="comment-section" id="comment-section">
+            <div class="comment">
+                <p><strong>User 1</strong>: This is a comment.</p>
+                <input type="text" placeholder="Reply...">
+                <button onclick="addReply(this)">Reply</button>
+                <button class="toggle-replies" onclick="toggleReplies(this)">▼</button>
+                <div class="replies"></div>
+            </div>
+        </div>
+        <script>
+            function addReply(button) {
+                let input = button.previousElementSibling;
+                let text = input.value.trim();
+                if (text === "") return;
+
+                let replyDiv = document.createElement("div");
+                replyDiv.classList.add("comment", "reply");
+                replyDiv.innerHTML = `<p><strong>User</strong>: ${text}</p>
+                                              <input type="text" placeholder="Reply...">
+                                              <button onclick="addReply(this)">Reply</button>
+                                              <button class="toggle-replies" onclick="toggleReplies(this)">▼</button>
+                                              <div class="replies"></div>`;
+
+                let parentComment = button.parentElement.querySelector(".replies");
+                parentComment.appendChild(replyDiv);
+                input.value = "";
+            }
+
+            function toggleReplies(button) {
+                let repliesDiv = button.nextElementSibling.nextElementSibling;
+                if (repliesDiv.style.display === "none" || repliesDiv.style.display === "") {
+                    repliesDiv.style.display = "block";
+                    button.textContent = "▼";
+                } else {
+                    repliesDiv.style.display = "none";
+                    button.textContent = "▶";
+                }
+            }
+        </script>
+    </div>
+
+    <div class="Resume">
+        <h1>Lachlan Jones</h1>
+        <h3>High School Student</h3>
+        <p>
+            I am a dedicated and hardworking student with a passion for learning and achieving academic
+            success. I am a skilled and adaptable learner, able to absorb new information quickly and apply
+            it effectively to complete assignments and projects.
+        </p>
+
+        <div class="section contact-info">
+            <h2>Contact</h2>
+            <p>Email: <a href="mailto:lachlan_ty_jones@hotmail.com">lachlan_ty_jones@hotmail.com</a>    (<--Link Here)</p>
+            <p>Phone: +61 481 215 112</p>
+            <p>Address: 8 Oak St, Cliftleigh, NSW</p>
+        </div>
+
+        <div class="section">
+            <h2>Education</h2>
+            <p>Saint Francis Xavier College, Hamilton</p>
+            <p>Current Year 11 student studying Enterprise Computing, Multimedia, and Music</p>
+        </div>
+
+        <div class="section-skills">
+            <h2>Skills</h2>
+            <ul>
+                <li>Time Management</li>
+                <li>Teamwork</li>
+                <li>Communication</li>
+                <li>Problem Solving</li>
+                <li>Creativity</li>
+                <li>Active Listening</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2>Experience</h2>
+            <p>McDonald's, Gilliston Heights, NSW</p>
+            <p>Currently working as a Back Area Worker</p>
+        </div>
+
+        <div class="section">
+            <h2>Reference</h2>
+            <p>Anne-Marie Kelly</p>
+            <p>Leader of Learning - Digital Innovation & Careers Coordinator at San Clemente, Mayfield</p>
+            <p>Phone: 4014 7300</p>
+        </div>
+    </div>
+
+</body>
+</html>
